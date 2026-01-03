@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>عطارة الريان</title>
 
 <style>
@@ -10,7 +11,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     direction:rtl;
 }
 
@@ -20,126 +21,134 @@ nav{
     top:0;
     width:100%;
     background:#2b1b17;
-    padding:15px 30px;
+    padding:10px 15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     z-index:1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 nav .logo{
     color:#f4c430;
-    font-size:22px;
+    font-size:18px;
     font-weight:bold;
 }
 
 nav .call-btn{
     background:#f4c430;
     color:#2b1b17;
-    padding:10px 22px;
-    border-radius:30px;
+    padding:8px 15px;
+    border-radius:25px;
     text-decoration:none;
     font-weight:bold;
+    font-size: 14px;
     transition:0.3s;
 }
 
-nav .call-btn:hover{
-    background:#ffd966;
-}
-
-/* Hero */
+/* Hero Section */
 .hero{
-    height:30vh;
+    height:60vh; /* تقليل الارتفاع للهاتف */
     background:url("5965283393589152794.jpg") center/cover no-repeat;
     position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero::after{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.5);
 }
 
 .hero-content{
     position:relative;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    z-index: 1;
     color:white;
     text-align:center;
-    padding-top:60px;
+    padding: 0 20px;
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:15px;
+    font-size:32px; /* حجم أصغر للهاتف */
+    margin-bottom:10px;
     color:#f4c430;
 }
 
 .hero p{
-    font-size:20px;
-    max-width:600px;
-    line-height:1.8;
+    font-size:16px;
+    line-height:1.6;
 }
 
-/* Section */
+/* Section Styling */
 .section{
-    padding:80px 20px;
+    padding:40px 15px;
     text-align:center;
 }
 
 .section h2{
-    font-size:32px;
-    margin-bottom:30px;
+    font-size:24px;
+    margin-bottom:25px;
     color:#5a3b2e;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-/* Products */
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #f4c430;
+}
+
+/* Products Grid */
 .products{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:25px;
+    /* تجعل المنتجات عمود واحد في الشاشات الصغيرة وتلقائياً تزيد في الشاشات الكبيرة */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap:15px;
     max-width:1100px;
     margin:auto;
 }
 
 .card{
     background:white;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
     overflow:hidden;
-    transform:translateY(40px);
-    opacity:0;
-    transition:0.6s;
-}
-
-.card.show{
-    transform:translateY(0);
-    opacity:1;
 }
 
 .card img{
     width:100%;
-    height:180px;
+    height:140px;
     object-fit:cover;
 }
 
 .card h3{
-    margin:15px 0 5px;
+    margin:10px 0 5px;
+    font-size: 16px;
 }
 
 .card p{
-    padding-bottom:15px;
-    font-size:14px;
-    color:#555;
+    padding:0 5px 15px;
+    font-size:13px;
+    color:#666;
 }
 
-/* About */
+/* About Section */
 .about{
     background:#f7f3ef;
+}
+
+.about p {
+    line-height: 1.8;
+    color: #444;
 }
 
 /* Footer */
@@ -147,82 +156,84 @@ footer{
     background:#1c120f;
     color:#ccc;
     text-align:center;
-    padding:20px;
-    font-size:14px;
+    padding:25px 15px;
+    font-size:13px;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+/* Media Queries للشاشات المتوسطة والكبيرة */
+@media (min-width: 768px) {
+    .hero { height: 80vh; }
+    .hero h1 { font-size: 48px; }
+    .hero p { font-size: 20px; }
+    nav .logo { font-size: 24px; }
+    nav .call-btn { font-size: 16px; }
+    .section h2 { font-size: 32px; }
+    .card img { height: 200px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
 <nav>
     <div class="logo">عطارة الريان</div>
-    <a href="tel:+201091304683" class="call-btn">📞خدمه التوصيل </a>
+    <a href="tel:+201091304683" class="call-btn">📞 اطلب الآن</a>
 </nav>
 
-<!-- Hero -->
 <section class="hero">
     <div class="hero-content">
         <h1>عالم البهارات</h1>
-        <p>
-            🌿 نختار أجود الأعشاب والبهارات بعناية  
-            لنقدّم لك نكهة طبيعية وجودة تثق بها
-        </p>
+        <p>🌿 نختار أجود الأعشاب والبهارات بعناية لنقدّم لك نكهة طبيعية وجودة تثق بها</p>
     </div>
 </section>
 
-<!-- Products -->
 <section class="section">
     <h2>منتجات مختارة</h2>
     <div class="products">
 
         <div class="card">
-            <img src="اعشاب.jpg">
-            <h3>اعشاب </h3>
+            <img src="اعشاب.jpg" alt="أعشاب">
+            <h3>أعشاب طبيعية</h3>
             <p>طعم قوي ونكهة أصلية</p>
         </div>
 
         <div class="card">
-            <img src="932565.jpg">
-            <h3>بهارات</h3>
-            <p>   جميع انواع البهارات</p>
+            <img src="932565.jpg" alt="بهارات">
+            <h3>بهارات مشكلة</h3>
+            <p>جميع أنواع البهارات الطازجة</p>
         </div>
 
         <div class="card">
-            <img src="أفضل-منتجات-العناية-بالبشرة.jpg">
-            <h3>ادوات العنايه </h3>
-            <p>  قسم تجميلي</p>
+            <img src="أفضل-منتجات-العناية-بالبشرة.jpg" alt="تجميل">
+            <h3>أدوات العناية</h3>
+            <p>قسم تجميلي طبيعي</p>
         </div>
 
         <div class="card">
-            <img src="طبق.jpg">
-            <h3>مستلزامات الافراح</h3>
-            <p>جميع المستلزامات بي افضل الاسعار    </p>
+            <img src="طبق.jpg" alt="مستلزمات">
+            <h3>مستلزمات الأفراح</h3>
+            <p>بأفضل الأسعار التنافسية</p>
         </div>
 
     </div>
 </section>
 
-<!-- About -->
 <section class="section about">
     <h2>لماذا نحن؟</h2>
     <p>
-        خبرة سنوات في اختيار أفضل البهارات  
+        خبرة سنوات في اختيار أفضل البهارات<br>
         طحن طازج • جودة عالية • ثقة عملائنا
     </p>
 </section>
 
-<!-- Footer -->
 <footer>
-    <p>📍  .المنصوره. نبروه. الدروتين. الموقف</p>
+    <p>📍 المنصورة - نبروه - الدروتين - الموقف</p>
     <p>© 2026 عطارة الريان</p>
 </footer>
 
-
-
 </body>
 </html>
-
-
-
