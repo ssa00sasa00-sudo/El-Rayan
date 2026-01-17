@@ -11,13 +11,12 @@
     <style>
         :root {
             --gold-grad: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            --black-overlay: rgba(0, 0, 0, 0.6); /* طبقة تعتيم للصورة */
+            --black-overlay: rgba(0, 0, 0, 0.6); 
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; -webkit-tap-highlight-color: transparent; }
 
         body {
-            /* إعداد صورة الخلفية */
             background: url("عطارخ1.jpg") no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
@@ -25,14 +24,12 @@
             position: relative;
         }
 
-        /* طبقة شفافة فوق الصورة لبروز العناصر */
         .page-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--black-overlay);
             z-index: -1;
         }
 
-        /* الهيدر */
         .dashboard {
             background: var(--gold-grad);
             padding: 10px 15px;
@@ -50,7 +47,6 @@
             background: rgba(255,255,255,0.4); border: 1px solid #000;
         }
 
-        /* حركة كلمة رمضان كريم الدائمة */
         .ramadan-hero { text-align: center; padding: 35px 10px 15px; }
         .makh-text {
             font-family: 'Reem Kufi', serif;
@@ -60,7 +56,7 @@
             -webkit-text-fill-color: transparent;
             display: inline-block;
             animation: infiniteMove 3s infinite ease-in-out;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.8)); /* ظل أسود لتبرز فوق الصورة */
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
         }
 
         @keyframes infiniteMove {
@@ -68,7 +64,6 @@
             50% { transform: scale(1.1) translateY(-10px); filter: brightness(1.3) drop-shadow(0 0 20px rgba(212, 175, 55, 0.6)); }
         }
 
-        /* شبكة الأزرار الذهبية بلمسة زجاجية */
         .container { padding: 10px 15px 60px; max-width: 500px; margin: auto; }
         .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
@@ -91,7 +86,6 @@
         .image-circle img { width: 100%; height: 100%; object-fit: cover; }
         .category-card span { font-size: 1.1rem; font-weight: 900; color: #000; }
 
-        /* تأثير التكبير وظهور "عطارة الريان" متحركة */
         .expanding-overlay {
             position: fixed; top: 50%; left: 50%;
             width: 10px; height: 10px;
@@ -165,12 +159,13 @@
             { name: "زيوت", img: "عافي1.jpg", url: "oil.html" },
             { name: "تمور", img: "تمر طح.jpg", url: "تمور.html" },
             { name: "مكرونه", img: "حواء مرمريه.jpg", url: "مكرونه.html" },
-            { name: "مجففات", img: "مشمش مجقق.jpg", url: "steps_dried.html" },
-            { name: "بلح فطره", img: "OIP.jpg", url: "steps_dates_fitra.html" },
-            { name: "مربي", img: "مربي فراوةله حلواتاني.jpg", url: "steps_jam.html" },
-            { name: "حلاوة", img: "بوادي1.jpg", url: "steps_halawa.html" },
-            { name: "مخللات", img: "زيتون اخضر.jpg", url: "steps_pickles.html" },
-            { name: "✨اقوي العروض الرمضان ✨", img: "OIP (1).jpg", url: "offers.html", isFull: true }
+            { name: "لانشون", img: "لانشون بيف.jpg", url: "لانشون.html" }, // الزر الجديد هنا
+            { name: "مجففات", img: "مشمش مجقق.jpg", url: "مجفف.html" },
+            { name: "بلح فطره", img: "OIP.jpg", url: "بلح فطره.html" },
+            { name: "مربي", img: "مربي فراوةله حلواتاني.jpg", url: "مربي.html" },
+            { name:  "حلاوة طحينيه", img: "بوادي1.jpg", url: "حلاوه.html" },
+            { name: "مخللات", img: "مخلل اسود اخضر.jpg", url: "مخللات.html" },
+            { name: "✨اقوي العروض الرمضان ✨", img: "OIP (1).jpg", url: "العروض.html", isFull: true }
         ];
 
         const gridContainer = document.getElementById('dynamic-grid');

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>مرحباً بكم في عطارة الريان</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold-grad: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --dark-overlay: rgba(0, 0, 0, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+
+        body {
+            /* وضع خلفية عطارة الريان كاملة */
+            background: url("عطارخ1.jpg") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* طبقة حماية لجعل النص واضحاً */
+        .full-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--dark-overlay);
+            z-index: 1;
+        }
+
+        /* نافذة الإعلان */
+        .announcement-card {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid #BF953F;
+            border-radius: 30px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: cardSlideUp 1s ease-out;
+        }
+
+        @keyframes cardSlideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .ramadan-icon {
+            font-size: 4rem;
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: moonGlow 2s infinite alternate;
+        }
+
+        @keyframes moonGlow {
+            from { filter: drop-shadow(0 0 5px #BF953F); transform: rotate(-10deg); }
+            to { filter: drop-shadow(0 0 20px #FCF6BA); transform: rotate(10deg); }
+        }
+
+        h1 {
+            color: #FCF6BA;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .highlight-box {
+            background: var(--gold-grad);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .enter-btn {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: 2px solid #BF953F;
+            color: #FCF6BA;
+            padding: 12px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .enter-btn:hover {
+            background: var(--gold-grad);
+            color: #000;
+        }
+
+        /* زينة رمضانية في الزوايا */
+        .corner-deco {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(191, 149, 63, 0.4);
+        }
+        .top-right { top: 20px; right: 20px; }
+        .bottom-left { bottom: 20px; left: 20px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="full-overlay"></div>
+
+    <div class="announcement-card">
+        <div class="corner-deco top-right"><i class="fas fa-star"></i></div>
+        <div class="corner-deco bottom-left"><i class="fas fa-star"></i></div>
+
+        <div class="ramadan-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+
+        <h1>عطارة الريان ترحب بكم</h1>
+        <p>تهنئكم عطارة الريان بحلول شهر رمضان المبارك، أعاده الله علينا وعليكم بالخير واليمن والبركات.</p>
+        
+        <div class="highlight-box">
+            🌙 سيتم الاعلان عن العروض قريباً 🌙
+        </div>
+
+        <a href="index.html" class="enter-btn">اضغط هنا للرجوع للصفحه الرئيسيه </a>
+    </div>
+
+</body>
+</html>
